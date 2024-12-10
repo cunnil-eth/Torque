@@ -43,8 +43,8 @@ class WalletManager {
         walletsToProcess.map(async (wallet) => {
           try {
             await action(wallet);
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          } catch (error : any) {
+          } catch (err : unknown) {
+            const error = err as Error;
             console.error(`Error with ${wallet.address}:`, error.message);
           }
         })
