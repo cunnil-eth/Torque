@@ -15,7 +15,11 @@ export const scheduleMinting = async () => {
   ]);
 
   // Convert to UNIX timestamp
-  const timestamp = parse(readableTime, "yyyy-MM-dd HH:mm:ss", new Date()).getTime() / 1000;
-  console.log(`Minting scheduled for: ${new Date(timestamp * 1000)}`);
+  const timestamp = parse(readableTime, "yyyy-MM-dd HH:mm:ss", new Date()).getTime();
+
+  console.log("**************************************************************************************");
+  console.log(`Minting scheduled for: ${new Date(timestamp)} `);
+  console.log("**************************************************************************************");
+
   return timestamp;
 };
