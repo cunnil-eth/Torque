@@ -65,7 +65,6 @@ async function main() {
 
       case "exit":
         exit = true;
-        console.log("Terminated");
         break;
     }
   }
