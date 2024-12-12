@@ -36,7 +36,7 @@ export const getContractDetails = async (): Promise<{
       {
         type: "input",
         name: "value",
-        message: "Enter the minting price in ETH (or 0 if free):",
+        message: "Enter the minting price in ETH (or 0 if free, point-separated, e.g., 0.1):",
         default: "0",
         validate: (input) => (!isNaN(parseFloat(input)) && parseFloat(input) >= 0 ? true : "Invalid ETH value."),
       },

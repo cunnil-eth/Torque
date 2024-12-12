@@ -2,6 +2,7 @@ import { setupWallets } from "./menu/setupWallet";
 import { importContractInfo } from "./menu/importContract";
 import { scheduleMinting } from "./menu/scheduleMint";
 import { startBot } from "./menu/startBot";
+//import { saveConfig, loadConfig } from "./config/configManager";
 import inquirer from "inquirer";
 import WalletManager from "./wallet/wallet";
 
@@ -28,6 +29,8 @@ async function main() {
           { name: "Setup a default wallet", value: "setupWallet" },
           { name: "Import contract info", value: "importContract" },
           { name: "Set the exact time for minting", value: "scheduleMinting" },
+          { name: "Save configuration", value: "saveConfig" },
+          { name: "Load configuration", value: "loadConfig" },
           { name: "Start the bot", value: "startBot" },
           { name: "Exit", value: "exit" },
         ],
@@ -35,19 +38,44 @@ async function main() {
     ]);
 
     switch (action) {
-      case "setupWallet":
+      case "setupWallet": {
         walletManager = await setupWallets();
         break;
+      }
 
-      case "importContract":
+      case "importContract": {
         contractDetails = await importContractInfo();
         break;
+      }
 
-      case "scheduleMinting":
+      case "scheduleMinting": {
         timestamp = await scheduleMinting();
         break;
+      }
 
-      case "startBot":
+      /*case "saveConfig": {
+        if (!walletManager || !contractDetails || !timestamp) {
+          console.error("Ensure wallet, contract, and timestamp are set before saving.");
+        } else {
+          await saveConfig(walletManager, contractDetails, timestamp);
+        }
+        break;
+      }
+
+      case "loadConfig": {
+        try {
+          const config = await loadConfig();
+          walletManager = config.walletManager;
+          contractDetails = config.contractInfo;
+          timestamp = config.scheduledTimestamp;
+        } catch (err) {
+          const error = err as Error;
+          console.error(error.message);
+        }
+          break;
+      }
+      */
+      case "startBot": {
         if (!walletManager) {
           console.error("You must set up a wallet before starting the bot.");
           break;
@@ -62,10 +90,12 @@ async function main() {
         }
         await startBot(walletManager, contractDetails, timestamp);
         break;
+      }
 
-      case "exit":
+      case "exit": {
         exit = true;
         break;
+      }
     }
   }
 };

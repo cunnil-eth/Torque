@@ -1,0 +1,31 @@
+{
+  "walletManager": {
+    "wallets": [
+      {
+        "provider": {},
+        "address": "0x547c9Ec286cF6B738047D9D5cd01b6F771F04C6f"
+      },
+      {
+        "provider": {},
+        "address": "0x547c9Ec286cF6B738047D9D5cd01b6F771F04C6f"
+      },
+      {
+        "provider": {},
+        "address": "0x547c9Ec286cF6B738047D9D5cd01b6F771F04C6f"
+      }
+    ],
+    "provider": {}
+  },
+  "contractInfo": {
+    "contractAddress": "0x547c9Ec286cF6B738047D9D5cd01b6F771F04C6f",
+    "functionName": "mint",
+    "parameterTypes": [
+      ""
+    ],
+    "parameters": [
+      ""
+    ],
+    "value": "2"
+  },
+  "scheduledTimestamp": 1733950800000
+}
