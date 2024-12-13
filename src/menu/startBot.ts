@@ -19,8 +19,8 @@ export const startBot = async (
   const delay = scheduledTimestamp - currentTimestamp;
 
   if (delay < 0) {
-      console.error("Error: The scheduled time is in the past. Please set valid time.");
-      return null;
+    console.error("The scheduled time is in the past. Please set valid time.");
+    return null;
   }
   
   console.log(`Scheduled to start minting in ${Math.ceil(delay / 1000)} seconds...`);
@@ -50,7 +50,7 @@ export const startBot = async (
       {
         type: "confirm",
         name: "cancel",
-        message: "Cancel the minting",
+        message: "Press Y to cancel the minting",
         default: false,
       },
     ]);
