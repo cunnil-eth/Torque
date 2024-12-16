@@ -36,6 +36,10 @@ class WalletManager {
       console.log("--------------------------------------------------------");
     }
 
+    getProvider(): ethers.JsonRpcProvider {
+      return this.provider;
+    }
+
     // Perform a parallel action with all wallets
     async performParallelAction(action: (wallet: ethers.Wallet) => Promise<void>) {
       const walletsToProcess = [this.loadDefaultWallet(), ...this.wallets];

@@ -22,6 +22,8 @@ export const startBot = async (
     console.error("The scheduled time is in the past. Please set valid time.");
     return null;
   }
+
+  const provider = walletManager.getProvider();
   
   console.log(`Scheduled to start minting in ${Math.ceil(delay / 1000)} seconds...`);
 
@@ -30,6 +32,7 @@ export const startBot = async (
       await walletManager.performParallelAction((wallet) => 
         performMinting(
           wallet,
+          provider,
           contractInfo.contractAddress,
           contractInfo.functionName,
           contractInfo.parameterTypes,
