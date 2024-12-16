@@ -12,7 +12,7 @@ export async function fetchGasPriceFromBlockNative(provider: ethers.JsonRpcProvi
   const network = await provider.getNetwork();
   const chainId = network.chainId;
 
-  const response = await axios.get(`https://api.blocknative.com/gasprices/blockprices?chaindid=${chainId}`, {
+  const response = await axios.get(`https://api.blocknative.com/gasprices/blockprices?chainid=${chainId}`, {
     headers: {
       Authorization: process.env.BLOCKNATIVE_API,
     },
