@@ -4,14 +4,10 @@ import { ethers } from "ethers";
 
 dotenv.config();
 
-export async function fetchGasPriceFromBlockNative(provider: ethers.JsonRpcProvider): Promise<{
+export async function fetchGasPriceFromBlockNative(chainId: bigint): Promise<{
   maxFeePerGas: bigint;
   maxPriorityFeePerGas: bigint;
 }> {
-  // Get network info to determine chain ID
-  const network = await provider.getNetwork();
-  const chainId = network.chainId;
-
   const response = await axios.get(`https://api.blocknative.com/gasprices/blockprices?chainid=${chainId}`, {
     headers: {
       Authorization: process.env.BLOCKNATIVE_API,
