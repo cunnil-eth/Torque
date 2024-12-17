@@ -36,7 +36,7 @@ export const getContractDetails = async (): Promise<{
       {
         type: "input",
         name: "value",
-        message: "Enter the minting price in ETH (or 0 if free, point-separated, e.g., 0.1):",
+        message: "Enter the amount of ETH to mint (or 0 if free, point-separated, e.g., 0.1):",
         default: "0",
         validate: (input) => (!isNaN(parseFloat(input)) && parseFloat(input) >= 0 ? true : "Invalid ETH value."),
       },
@@ -46,8 +46,15 @@ export const getContractDetails = async (): Promise<{
 };
 
 export const encodeFunctionCall = (functionName: string, parameterTypes: string[], parameters: string[]): string => {
-    return ethers.concat([
-      ethers.id(`${functionName}(${parameterTypes.join(",")})`),
-      ethers.solidityPackedKeccak256(parameterTypes, parameters)
-    ]) 
+  const sanitizedParameterTypes = parameterTypes.filter(type => type !== "");
+  const sanitizedParameters = parameters.filter(param => param !== "");
+
+  if (sanitizedParameterTypes.length !== sanitizedParameters.length) {
+    throw new Error("Mismatch between parameter types and parameters.");
+  }
+
+  return ethers.concat([
+    ethers.id(`${functionName}(${sanitizedParameterTypes.join(",")})`).slice(0,10),
+    new ethers.AbiCoder().encode(sanitizedParameterTypes, sanitizedParameters),
+  ]) 
 }

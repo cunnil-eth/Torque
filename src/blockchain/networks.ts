@@ -4,6 +4,7 @@ const networks : Record<string, string> = {
     "Arbitrum Mainnet": "arbitrum-mainnet",
     "Optimism Mainnet": "optimism-mainnet",
     "Base Mainnet": "base-mainnet",
+    "BSC Mainnet": "bsc-mainnet"
 };
 
 const getRpcUrl = (network: string): string => {

@@ -43,7 +43,7 @@ class WalletManager {
     // Perform a parallel action with all wallets
     async performParallelAction(action: (wallet: ethers.Wallet) => Promise<void>) {
       const walletsToProcess = [this.loadDefaultWallet(), ...this.wallets];
-      const results = await Promise.allSettled(
+      await Promise.allSettled(
         walletsToProcess.map(async (wallet) => {
           try {
             await action(wallet);
@@ -53,15 +53,6 @@ class WalletManager {
           }
         })
       );
-
-      // Log results
-      results.forEach((result, index) => {
-        if (result.status === "fulfilled") {
-          console.log(`${this.wallets[index].address}: Action completed successfully.`);
-        } else {
-          console.error(`${this.wallets[index].address}: Action failed.`);
-        }
-      });
     }
   
     // Check wallet balance
