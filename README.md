@@ -33,8 +33,8 @@ EVM-compatible NFT minting bot
 1. **Clone the repository**:
    
    ```
-   git clone https://github.com/your-username/nft-minting-bot.git
-   cd nft-minting-bot
+   git clone https://github.com/cunnil-eth/Torque.git
+   cd Torque
    ```
 2. **Install dependencies**:
    
@@ -42,7 +42,7 @@ EVM-compatible NFT minting bot
    npm install
    ```
 3. **Set up environment variables**:
-   Create a `.env` file in the root directory and configure your environment:
+ Create a `.env` file in the root directory and configure your environment:
    
    ```
    RPC_API=
@@ -59,7 +59,7 @@ EVM-compatible NFT minting bot
    npx ts-node src/index.ts
    ```
 5. **(Optional) Congifure multiple wallets**:
-Provide private keys in `wallet/wallets.txt`
+ Provide private keys in `wallet/wallets.txt`
 
 ## 🛡️ Error Handling & Fallbacks
 
