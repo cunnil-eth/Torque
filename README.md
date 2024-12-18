@@ -31,21 +31,25 @@ EVM-compatible NFT minting bot
 ## 📦 Installation
 
 1. **Clone the repository**:
+   
    ```
    git clone https://github.com/your-username/nft-minting-bot.git
    cd nft-minting-bot
    ```
 2. **Install dependencies**:
+   
    ```
    npm install
    ```
-4. **Set up environment variables**:
+3. **Set up environment variables**:
    Create a `.env` file in the root directory and configure your environment:
+   
    ```
    RPC_API=
    PRIVATE_KEY=
    BLOCKNATIVE_API=
    ```
+   
    - `RPC_API`: Your RPC provider API (Infura, Alchemy, etc.).
    - `PRIVATE_KEY`: The private key of the default wallet.
    - `BLOCKNATIVE_API`: API key for BlockNative.
@@ -62,7 +66,7 @@ EVM-compatible NFT minting bot
 ## 🤝 Contact
 
 - [Telegram](https://t.me/cunnil_eth)
-- Discord: cunnil.eth
+- [Discord](https://discord.com/users/346707435391549456/)
 - Email: canboh085@gmail.com
 
 ## 📜 License
