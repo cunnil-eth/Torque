@@ -28,7 +28,7 @@ EVM-compatible NFT minting bot
 - [**BlockNative API**](https://docs.blocknative.com/gas-prediction/gas-platform)
 - **Node.js**
 
-## 📦 Installation
+## 📦 Installation and Start
 
 1. **Clone the repository**:
    
@@ -53,6 +53,13 @@ EVM-compatible NFT minting bot
    - `RPC_API`: Your RPC provider API (Infura, Alchemy, etc.).
    - `PRIVATE_KEY`: The private key of the default wallet.
    - `BLOCKNATIVE_API`: API key for BlockNative.
+4. **Start the bot**:
+
+   ```
+   npx ts-node src/index.ts
+   ```
+5. **(Optional) Congifure multiple wallets**:
+   Provide private keys in `wallet/wallets.txt`
 
 ## 🛡️ Error Handling & Fallbacks
 
@@ -61,6 +68,7 @@ EVM-compatible NFT minting bot
 
 ## 📈 Future Improvements
 
+- [ ] Save data into a config
 - [ ] Contract ABI support
 
 ## 🤝 Contact
