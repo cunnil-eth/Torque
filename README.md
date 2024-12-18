@@ -41,7 +41,7 @@ EVM-compatible NFT minting bot
    ```
    npm install
    ```
-3. **Set up environment variables**:
+3. **Set up environment variables**:  
  Create a `.env` file in the root directory and configure your environment:
    
    ```
@@ -58,7 +58,7 @@ EVM-compatible NFT minting bot
    ```
    npx ts-node src/index.ts
    ```
-5. **(Optional) Congifure multiple wallets**:
+5. **(Optional) Congifure multiple wallets**:  
  Provide private keys in `wallet/wallets.txt`
 
 ## 🛡️ Error Handling & Fallbacks
