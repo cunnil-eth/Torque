@@ -1,7 +1,6 @@
 # Torque
 EVM-compatible NFT minting bot 
 
----
 
 ## 📖 Table of Contents
 
@@ -13,8 +12,6 @@ EVM-compatible NFT minting bot
 6. [Contact](#-contact)
 7. [License](#-license)
 
----
-
 ## 📋 Features
 
 - **Dynamic Gas Management**: Ensures transactions are included in the first block using real-time gas prices.
@@ -24,16 +21,12 @@ EVM-compatible NFT minting bot
 - **Graceful Error Handling**: Handles corrupted/missing configurations and transaction failures.
 - **Customizable Timing**: Dynamically calculate delays based on the blockchain network.
 
----
-
 ## 🛠️ Tech Stack
 
 - **TypeScript**
 - **ethers.js**
-- **BlockNative API**
+- [**BlockNative API**](https://docs.blocknative.com/gas-prediction/gas-platform)
 - **Node.js**
-
----
 
 ## 📦 Installation
 
@@ -43,33 +36,28 @@ EVM-compatible NFT minting bot
    cd nft-minting-bot
    ```
 2. **Install dependencies**:
-   `npm install`
-3. **Set up environment variables**:
+   ```
+   npm install
+   ```
+4. **Set up environment variables**:
    Create a `.env` file in the root directory and configure your environment:
    ```
    RPC_API=
    PRIVATE_KEY=
    BLOCKNATIVE_API=
    ```
-   - `RPC_API`: Your RPC provider URL (Infura, Alchemy, etc.).
-   - `PRIVATE_KEY`: API key for BlockNative.
-   - `BLOCKNATIVE_API`: The private key of the default wallet.
-
----
-
+   - `RPC_API`: Your RPC provider API (Infura, Alchemy, etc.).
+   - `PRIVATE_KEY`: The private key of the default wallet.
+   - `BLOCKNATIVE_API`: API key for BlockNative.
 
 ## 🛡️ Error Handling & Fallbacks
 
 - If the BlockNative API fails, the bot gracefully falls back to the `provider.getFeeData` method to fetch gas prices.
 - Missing or corrupted `config.json` files will be handled with default settings or user prompts.
 
----
-
 ## 📈 Future Improvements
 
 - [ ] Contract ABI support
-
----
 
 ## 🤝 Contact
 
@@ -77,8 +65,6 @@ EVM-compatible NFT minting bot
 - Discord: cunnil.eth
 - Email: canboh085@gmail.com
 
----
-
 ## 📜 License
 
-This project is licensed under the MIT `[LICENSE](LICENSE)`. See LICENSE for details.
+This project is licensed under the MIT LICENSE. See [LICENSE](LICENSE) for details.
