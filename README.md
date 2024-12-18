@@ -59,7 +59,7 @@ EVM-compatible NFT minting bot
    npx ts-node src/index.ts
    ```
 5. **(Optional) Congifure multiple wallets**:
-   Provide private keys in `wallet/wallets.txt`
+Provide private keys in `wallet/wallets.txt`
 
 ## 🛡️ Error Handling & Fallbacks
 
